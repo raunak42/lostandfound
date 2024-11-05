@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Submission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="form-section">
+      <h2>Report an Item</h2>
+      <form id="itemForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <label for="item">Item Name:</label>
+        <input type="text" id="item" placeholder="Item Name" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Describe the item" required></textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" required>
+          <option value="" disabled selected>Select Status</option>
+          <option value="Lost">Lost</option>
+          <option value="Found">Found</option>
+        </select>
+        <label for="how">How to find you:</label>
+        <textarea id="how_to_find_me"
+          placeholder="Enter some details so that person who lost/found an item can find you for example you can give ur attire or ur phone number or where u will be available at specific time"
+          required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="data-section">
+
+      <h2>Submitted Items</h2>
+      <input type="text" id="searchBar" placeholder="Search items..." oninput="searchItems()">
+      <div id="displayContainer" class="data-list">No data submitted yet.</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
