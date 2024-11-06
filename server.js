@@ -1,34 +1,11 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const cors = require("cors");
+const cors = require("cors")
 
 const app = express();
-app.use(cors());
+app.use(cors())
 const PORT = 4000;
-
-// Set security headers
-app.use((req, res, next) => {
-  // Content Security Policy (CSP)
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
-  );
-
-  // X-XSS-Protection
-  res.setHeader("X-XSS-Protection", "1; mode=block");
-
-  // X-Frame-Options
-  res.setHeader("X-Frame-Options", "SAMEORIGIN");
-
-  // Strict-Transport-Security
-  res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-
-  // Referrer-Policy
-  res.setHeader("Referrer-Policy", "origin-when-cross-origin");
-
-  next();
-});
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -85,4 +62,4 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-module.exports = app;
+module.exports = app
