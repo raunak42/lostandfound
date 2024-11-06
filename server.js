@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -59,3 +59,5 @@ app.post("/submit", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+export default app
